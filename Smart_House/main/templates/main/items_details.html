@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Деталі про предмет{% endblock %}
+
+{% block content %}
+    <div class="details">
+        <h1>Назва: {{ items_detail.name }}</h1>
+        <h1>Викладач: {{ items_detail.title }}</h1>
+        <h1>Засіб керування: {{ items_detail.controller }}</h1>
+        <a href="{% url 'item_delete' items_detail.id %}" class="btn btn-danger">Видалити</a>
+        <a href="{% url 'item_update' items_detail.id %}" class="btn btn-info">Редагувати</a>
+    </div>
+{% endblock %}

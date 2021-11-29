@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    Видалення засобу керування
+{% endblock %}
+
+{% block content %}
+    <div class="adding_сontroller">
+        <h1>Видалення засобу керування</h1>
+        <form method="post">
+            {% csrf_token %}
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Видалити</button>
+        </form>
+    </div>
+{% endblock %}

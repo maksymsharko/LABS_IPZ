@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% block title %}Автентифікація{% endblock %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="login">
+    <h2>Автентифікація</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ login_form|crispy }}
+        <button class="btn btn-primary" type="submit">Увійти</button>
+    </form>
+    <p class="text-center">У вас ще немає аккаунту? <a href="{% url 'registration' %}">Створити аккаунт</a>.</p>
+    </div>
+{% endblock %}

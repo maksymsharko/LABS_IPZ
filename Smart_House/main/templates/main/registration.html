@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+
+{% block title %}Реєстраційна форма{% endblock %}
+
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="registration">
+        <h2>Реєстрація</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ register_form|crispy }}
+            <button class="btn btn-primary" type="submit">Реєструвати</button>
+        </form>
+        <p class="text-center">Якщо ви вже маєте акаунт, <a href="{% url 'login' %}">увійдіть</a></p>
+    </div>
+{% endblock %}

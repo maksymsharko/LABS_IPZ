@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Головна сторінка!
+{% endblock %}
+
+{% block content %}
+    {% include 'main/link.html' %}
+    <h1>Головна сторінка!</h1>
+    <p>
+        Тут можна побачити загальну інформацію по пристроям та засобам керування. <br>
+        A також Ви можете відредагувати дані, змінити інформацію та видалити запис!
+    </p>
+    <div class="images">
+        <img class="main_image" src="{% static 'img/smart_house.jpg' %}" alt="MainPageImg">
+    </div>
+{% endblock %}

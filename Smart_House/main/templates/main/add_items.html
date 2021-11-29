@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    Добавлення пристроїв
+{% endblock %}
+{% load static %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="adding_items">
+            <h1>Добавлення пристроїв</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.name }}
+                {{ form.title }}
+                {{ form.controller }}
+                <span>{{ error }}</span>
+                <button class="btn btn-success" type="submit">Додати</button>
+            </form>
+        </div>
+    {% else %}
+        <p>Помилка!<br>Щоб добавляти пристрої, потрібно <a href="{% url 'registration' %}">зареєструватись</a>
+            або <a href="{% url 'login' %}">уввійти</a>, якщо у вас є профіль!<i class="far fa-smile-wink"></i></p>
+    {% endif %}
+{% endblock %}

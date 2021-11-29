@@ -1,0 +1,36 @@
+{% load static %}
+{% block content %}
+    <style>
+        .alert-warning {
+            float: left;
+            clear: both;
+            width: 400px;
+            margin: 20px 34%;
+            text-align: left;
+        }
+    </style>
+    {% include 'main/link.html' %}
+    {% if user.is_authenticated %}
+        <div class="alert alert-warning">
+            {% if controller_list %}
+                {% for el in controller_list %}
+                    <div class="alert alert-secondary">
+                        <h3>Назва: {{ el.name_controller }}</h3>
+                        <p>Кількість елементів: {{ el.has_item }}</p>
+                        <p>ID: {{ el.id }}</p>
+                        <a href="{% url 'controller_detail' el.id %}" class="btn btn-warning">Детальніше</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Можете добавити засоби керування!</p>
+            {% endif %}
+            <div class="lector_list">
+                <a href="{% url 'add_controller' %}">
+                    <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавити засіб керування</button>
+                </a>
+            </div>
+        </div>
+    {% else %}
+        <p>Щоб мати змогу добавити засоби керування, потрібно <a href="{% url 'registration' %}">авторизуватись</a> або пройти
+            <a href="{% url 'login' %}"> автентифікацію!</a></p>    {% endif %}
+{% endblock %}

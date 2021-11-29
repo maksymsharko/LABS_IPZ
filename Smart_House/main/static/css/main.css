@@ -1,0 +1,181 @@
+body {
+    background: moccasin;
+}
+
+header img {
+    width: 90px;
+    float: left;
+}
+
+header .logo {
+    font-size: 40px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+header a {
+    margin-right: 15px;
+    font-size: 20px;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul a {
+    color: brown;
+    display: block;
+    transition: transform .06s ease;
+}
+
+header ul li:hover, header ul a:hover {
+    color: brown;
+    transform: scale(1.05);
+    transition: transform .06s ease;
+}
+
+
+.text {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 25px;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    position: center;
+}
+
+form {
+    margin-left: 29%;
+    width: 600px;
+    margin-top: 50px;
+}
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
+}
+
+.main_image {
+    display: block;
+    margin: auto;
+}
+
+.footer {
+    height: 70px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.registration h2 {
+    text-align: center;
+}
+
+.login h2 {
+    text-align: center;
+}
+
+.adding_items {
+    padding-top: 50px;
+}
+
+.adding_collector {
+    padding-top: 50px;
+}
+
+.info {
+    text-align: center;
+    color: gray;
+    padding-top: 50px;
+}
+
+.info h1 {
+    color: black;
+}
+
+input + .text:after {
+    content: "OFF";
+    margin-right: 50px;
+}
+
+input:checked + .text:after {
+    content: "ON"
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: absolute;
+    right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    display: none;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

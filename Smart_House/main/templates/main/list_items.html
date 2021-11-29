@@ -1,0 +1,43 @@
+{% load static %}
+{% block content %}
+    <style>
+        .alert-warning {
+            float: left;
+            clear: both;
+            width: 400px;
+            margin: 20px 34%;
+            text-align: left;
+        }
+    </style>
+    {% include 'main/link.html' %}
+    {% if user.is_authenticated %}
+        <div class="alert alert-warning">
+            {% if items_list %}
+                {% for elem in items_list %}
+                    <div class="alert alert-secondary">
+                        <h3>Назва пристрою: {{ elem.name }}</h3>
+                        <p>Подробиці: {{ elem.title }}</p>
+                        <p>Засіб керування: {{ elem.controller }}</p>
+                        <a href="{% url 'item_detail' elem.id %}" class="btn btn-warning">Детальніше</a>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Можете добавити пристрої!</p>
+            {% endif %}
+            <div class="lesson_list">
+                <div class="containerButton">
+                    <a href="{% url 'add_item' %}">
+                        <button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавити пристрій</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>Щоб мати змогу добавити пристрої, потрібно <a href="{% url 'registration' %}">авторизуватись</a> або пройти
+            <a href="{% url 'login' %}"> автентифікацію!</a></p>
+    {% endif %}
+{% endblock %}

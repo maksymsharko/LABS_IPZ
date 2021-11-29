@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Добавлення засобів керування
+{% endblock %}
+{% load static %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="adding_collector">
+            <h1>Добавлення засобів керування</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.name_controller }}<br>
+                {{ form.has_item }}
+                <span>{{ error }}</span>
+                <button class="btn btn-success" type="submit">Додати</button>
+            </form>
+        </div>
+    {% else %}
+        <p>Помилка!<br>Щоб добавити пристрій керування, потрібно <a href="{% url 'registration' %}">зареєструватись</a>
+            або <a href="{% url 'login' %}">уввійти</a>, якщо у вас є профіль!<i class="far fa-smile-wink"></i></p>
+    {% endif %}
+{% endblock %}

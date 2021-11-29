@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Інформація{% endblock %}
+
+{% block content %}
+    <div class="info">
+        <h1>Інформація про користувача:</h1>
+        <h2><em>Логін:</em> <strong>{{ user.username }}</strong></h2>
+        <h2><em>Email:</em> <strong>{{ user.email }}</strong></h2>
+        <h2><em>Ім'я:</em> <strong>{{ user.first_name }}</strong></h2>
+        <h2><em>Прізвище:</em> <strong>{{ user.last_name }}</strong></h2>
+    </div>
+{% endblock %}

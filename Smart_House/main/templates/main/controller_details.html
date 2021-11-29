@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Деталі про засбі керування{% endblock %}
+
+{% block content %}
+    <div class="details">
+        <h1>Назва засобу керування: {{ controller_detail.name_controller }}</h1>
+        <h1>Скільки приєднано засобів: {{ controller_detail.has_item }}</h1>
+        <a href="{% url 'controller_delete' controller_detail.id %}" class="btn btn-danger">Видалити</a>
+        <a href="{% url 'controller_update' controller_detail.id %}" class="btn btn-info">Редагувати</a>
+    </div>
+{% endblock %}
